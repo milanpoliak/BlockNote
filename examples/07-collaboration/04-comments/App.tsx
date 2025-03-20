@@ -20,7 +20,8 @@ async function resolveUsers(userIds: string[]) {
   // fake a (slow) network request
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  return HARDCODED_USERS.filter((user) => userIds.includes(user.id));
+  console.log('resolving');
+  return HARDCODED_USERS.slice(1).filter((user) => userIds.includes(user.id));
 }
 
 // This follows the Y-Sweet example to setup a collabotive editor
